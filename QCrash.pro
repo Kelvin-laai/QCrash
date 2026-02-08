@@ -9,4 +9,4 @@ test.subdir   = $$PWD/test
 
 
 QCrash.depends +=
-test.depends   +=
+test.depends   += QCrash

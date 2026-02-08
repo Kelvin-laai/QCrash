@@ -45,12 +45,12 @@ public:
 
     bool writeMinidump();
 
-    static const char* version() const;
-    static int major() const;
-    static int minor() const;
-    static int patch() const;
+    static const char* version();
+    static int major();
+    static int minor();
+    static int patch();
     #if defined(Q_OS_WIN)
-    static int build() const;
+    static int build();
     #endif
 
 private:

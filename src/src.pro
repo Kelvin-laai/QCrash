@@ -15,9 +15,9 @@ DESTDIR  = $$PWD/../lib/
 #############################
 
 CONFIG(debug, debug|release) {
-  TARGET = QxOrmd
+  TARGET = QCrashd
 } else {
-  TARGET = QxOrm
+  TARGET = QCrash
 } # CONFIG(debug, debug|release)
 
 

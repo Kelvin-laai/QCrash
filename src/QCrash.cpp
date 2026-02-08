@@ -302,7 +302,7 @@ QCrash* QCrash::Instance()
 QCrash::QCrash()
 {
     d = new QCrashPrivate();
-    d->setReportPath(QDir::tempPath());
+    // d->setReportPath(QDir::tempPath() + "/dump");
 }
 
 QCrash::~QCrash()
@@ -361,10 +361,10 @@ void QCrash::setReporter(const QString& reporter)
 }
 
 
-const char* QCrash::version() const { return QCRASH_VERSION_STR;}
-int QCrash::major() const { return QCRASH_VERSION_MAJOR;}
-int QCrash::minor() const { return QCRASH_VERSION_MINOR;}
-int QCrash::patch() const { return QCRASH_VERSION_PATCH;}
+const char* QCrash::version() { return QCRASH_VERSION_STR;}
+int QCrash::major() { return QCRASH_VERSION_MAJOR;}
+int QCrash::minor() { return QCRASH_VERSION_MINOR;}
+int QCrash::patch() { return QCRASH_VERSION_PATCH;}
 #if defined(Q_OS_WIN)
-int QCrash::build() const { return QCRASH_VERSION_BUILD;}
+int QCrash::build() { return QCRASH_VERSION_BUILD;}
 #endif

@@ -5,7 +5,8 @@
 #include <QDir>
 
 #include "CrashReporterWidget.h"
-#include "../version.h"
+#include "version.h"
+#include "QCrash.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,12 @@ int main(int argc, char *argv[])
     a.setOrganizationDomain(VER_COMPANYDOMAIN_STR);
     a.setApplicationName(VER_FILEDESCRIPTION_STR);
     a.setApplicationVersion(VER_FILEVERSION_STR);
+
+    QCrash::Instance()->setReportPath(qApp->applicationDirPath() + "/dump");
+
+    QList<int> args = {};
+    // args.at(1);
+    throw std::runtime_error("Test Exception");
 
     QString dmpPath;
 

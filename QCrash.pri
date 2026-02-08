@@ -8,7 +8,7 @@ HEADERS += $$PWD/include/QCrash.h
 
 LIBS += -L"$$PWD/lib"
 CONFIG(debug, debug|release) {
-    LIBS += -l"QCrash"
+    LIBS += -l"QCrashd"
 } else {
     LIBS += -l"QCrash"
 } # CONFIG(debug, debug|release)
