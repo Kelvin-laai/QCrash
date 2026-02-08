@@ -24,37 +24,34 @@ INCLUDEPATH +=  $$PWD
 
 DEPENDPATH +=  $${INCLUDEPATH}
 
+include(../../QCrash.pri)
+
 #Build directory to keep things clean
 CONFIG(debug, debug|release) {
-    MOC_DIR = "$$OUT_PWD/tmp/crash/debug/.moc"
-    OBJECTS_DIR =  "$$OUT_PWD/tmp/crash/debug/.obj"
-    UI_DIR =  "$$OUT_PWD/tmp/debug/crash/.ui"
-    RCC_DIR =  "$$OUT_PWD/tmp/debug/crash/.qrc"
+    MOC_DIR     = "$$OUT_PWD/tmp/crash/debug/.moc"
+    OBJECTS_DIR = "$$OUT_PWD/tmp/crash/debug/.obj"
+    UI_DIR      = "$$OUT_PWD/tmp/debug/crash/.ui"
+    RCC_DIR     = "$$OUT_PWD/tmp/debug/crash/.qrc"
 }
 CONFIG(release, debug|release) {
-    MOC_DIR = "$$OUT_PWD/tmp/release/crash/.moc"
-    OBJECTS_DIR =  "$$OUT_PWD/tmp/release/crash/.obj"
-    UI_DIR =  "$$OUT_PWD/tmp/release/crash/.ui"
-    RCC_DIR =  "$$OUT_PWD/tmp/release/crash/.qrc"
+    MOC_DIR     = "$$OUT_PWD/tmp/release/crash/.moc"
+    OBJECTS_DIR = "$$OUT_PWD/tmp/release/crash/.obj"
+    UI_DIR      = "$$OUT_PWD/tmp/release/crash/.ui"
+    RCC_DIR     = "$$OUT_PWD/tmp/release/crash/.qrc"
 }
 
 
+# RC_FILE = ../../theme/appico.rc
 
-RC_FILE = ../../theme/appico.rc
-
-RESOURCES += \
-    ../../theme/resource.qrc
+# RESOURCES += ../../theme/resource.qrc
 
 macx{
-
     cache()
-
     CONFIG -= app_bundle
-
 }
 
 linux{
-     LIBS += -lGL #-lpython2.7
+    LIBS += -lGL #-lpython2.7
 }
 
 
@@ -71,9 +68,10 @@ SOURCES += \
     $$PWD/HttpRequestWorker.cpp
 
 HEADERS  += \
-    $$PWD/../../version.h \
+    $$PWD/version.h \
     $$PWD/CrashReporterWidget.h \
-    $$PWD/HttpRequestWorker.h
+    $$PWD/HttpRequestWorker.h \
+    version.h
 
 FORMS += \
     $$PWD/CrashReporterWidget.ui

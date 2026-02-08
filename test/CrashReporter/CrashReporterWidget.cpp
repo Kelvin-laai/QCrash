@@ -21,7 +21,7 @@
 #include <QProcess>
 #include <QDesktopWidget>
 
-#include "../../version.h"
+#include "../version.h"
 
 CrashReporterWidget::CrashReporterWidget(QWidget *parent) :
     QWidget(parent),
