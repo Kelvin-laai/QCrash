@@ -10,13 +10,12 @@ Clone repo or download from releases. [![](https://img.shields.io/badge/Download
 
 * Step 1: Include Header in app. Create version.h from sample_version.h file which suits your app.
 ```
-#include "version.h"
-#include "CrashHandler.h"
+#include "QCrash.h"
 ```
 
 * Step 2: Init Crash Handler
 ```
-CrashManager::CrashHandler::instance()->Init( QDir::tempPath());
+QCrash::Instance()->setReportPath(QDir::tempPath());
 ```
 
 * Step 3: Open CrashRepoter pro file(Qt Project) and build executable out of it. Put it in same dir of App executable.
